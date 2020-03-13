@@ -1,3 +1,4 @@
+language: node_js
 sudo: required
 services:
   - docker
@@ -5,7 +6,7 @@ services:
 before_install:
   - docker build -t  haryorbami/react-test -f ./client/Dockerfile.dev ./client
 
-scripts:
+script:
   - docker run haryorbami/react-test npm test -- --coverage
 
 after_success:
